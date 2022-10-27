@@ -22,33 +22,3 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst->next;
 	}
 }
-void    plus(void *to)
-{
-    int i;
-    char *r;
-    r = (char *)to;
-
-    i = 0;
-    while (r[i] != '\0')
-    {
-        r[i] = r[i] - 32;
-        i++;
-    }
-}
-
-int main(void)
-{
-    t_list *str;
-
-    char i[]= "jghg";
-    char i1[]= "a";
-    char i2[]= "bc";
-    char i3[]= "ert";
-
-    str = ft_lstnew(i);
-    ft_lstadd_back(&str,ft_lstnew(i1));
-    ft_lstadd_back(&str,ft_lstnew(i2));
-    ft_lstadd_back(&str,ft_lstnew(i3));
-    ft_lstiter(str,plus);
-    printf("%s",(char *)str ->content);
-}

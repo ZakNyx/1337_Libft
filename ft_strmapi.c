@@ -33,20 +33,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	result[i] = '\0';
 	return (result);
 }
-
-
-char upper(unsigned int i, char t)
-{
-	t -= 32;
-	return t;
-}
-
-int main(void)
-{
-	char str[] = "test";
-	int i = 0;
-
-	char *c = ft_strmapi(str, upper);
-	
-	printf("%s", c);
-}
